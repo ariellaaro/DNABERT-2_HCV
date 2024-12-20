@@ -1,9 +1,6 @@
 # DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome
 
-The repo contains: 
-
-1. The official implementation of [DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome](https://arxiv.org/abs/2306.15006)
-2. Genome Understanding Evaluation (GUE): a comprehensize benchmark containing 28 datasets for multi-species genome understanding benchmark.
+The repo contains the official implementation of [DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome](https://arxiv.org/abs/2306.15006)
 
 
 
@@ -19,12 +16,6 @@ The repo contains:
 
 
 
-## Update (2024/02/14)
-
-We publish DNABERT-S,  a foundation model based on DNABERT-2 specifically designed for generating DNA embedding that naturally clusters and segregates genome of different species in the embedding space. Please check it out [here](https://github.com/Zhihan1996/DNABERT_S) if you are interested.
-
-
-
 ## 1. Introduction
 
 DNABERT-2 is a foundation model trained on large-scale multi-species genome that achieves the state-of-the-art performance on $28$ tasks of the GUE benchmark. It replaces k-mer tokenization with BPE, positional embedding with Attention with Linear Bias (ALiBi), and incorporate other techniques to improve the efficiency and effectiveness of DNABERT.
@@ -34,20 +25,6 @@ DNABERT-2 is a foundation model trained on large-scale multi-species genome that
 ## 2. Model and Data
 
 The pre-trained models is available at Huggingface as `zhihan1996/DNABERT-2-117M`. [Link to HuggingFace ModelHub](https://huggingface.co/zhihan1996/DNABERT-2-117M). [Link For Direct Downloads]().
-
-
-
-### 2.1 GUE: Genome Understanding Evaluation
-
-GUE is a comprehensive benchmark for genome understanding consising of $28$ distinct datasets across $7$ tasks and $4$ species. GUE can be download [here]([https://drive.google.com/file/d/1GRtbzTe3UXYF1oW27ASNhYX3SZ16D7N2/view?usp=sharing](https://drive.google.com/file/d/1uOrwlf07qGQuruXqGXWMpPn8avBoW7T-/view?usp=sharing)). Statistics and model performances on GUE is shown as follows:
-
-
-
-![GUE](figures/GUE.png)
-
-
-
-![Performance](figures/Performance.png)
 
 
 
