@@ -123,7 +123,9 @@ model = AutoModelForSequenceClassification.from_pretrained(hcv_bert, trust_remot
 
 ## 5. Making Predictions
 
-- For single sequence classification:
+### For single sequence classification:
+
+- Replace "ACGTACGTACGT" with your own sequence.
 
 ```python
 seq = "ACGTACGTACGT"
@@ -139,7 +141,9 @@ print(f"Label: {label}")
 
 ```
 
-- For multiple sequence classification (from a csv file):
+### For multiple sequence classification:
+
+- Place your sequences.csv file in the home directory, with one sequence per line (no header or labels).
 
 ```python
 pip install pandas
