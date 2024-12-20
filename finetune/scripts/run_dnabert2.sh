@@ -1,6 +1,6 @@
 #!/bin/bash
 
-data_path=/home/seq
+data_path=/home/sequences
 lr=3e-5
 
 echo "The provided data_path is $data_path"
