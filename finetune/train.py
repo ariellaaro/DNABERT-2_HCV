@@ -302,7 +302,14 @@ def train():
         with open(os.path.join(results_path, "eval_results.json"), "w") as f:
             json.dump(results, f)
 
+    # save model and tokenizer; you need to have a folder named "hcv_bert" at the home directory
+    hcv_bert = os.path.expanduser("~/hcv_bert")
 
+    model.save_pretrained(hcv_bert)
+    print(f"Model in {hcv_bert}")
+
+    tokenizer.save_pretrained(hcv_bert)
+    print(f"Tokenizer in {hcv_bert}")
 
 
 if __name__ == "__main__":
