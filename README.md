@@ -1,8 +1,6 @@
 # DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome
 
-The repo contains the official implementation of [DNABERT-2: Efficient Foundation Model and Benchmark for Multi-Species Genome](https://arxiv.org/abs/2306.15006)
-
-
+This repository is a fork that contains the modified scripts and obtained results for the DNABERT-2 application for HCV genotype and subtype prediction. The official model can be found [here](https://github.com/MAGICS-LAB/DNABERT_2).
 
 ## Contents
 
