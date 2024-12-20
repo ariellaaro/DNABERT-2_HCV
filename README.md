@@ -4,23 +4,30 @@ This repository is a fork of the original DNABERT-2 project. It contains modifie
 
 Below is the recommended setup for HCV fine-tuning using a Linux OS. Please check and edit your own file/folder paths before running the following codes.
 
-For pre-training information, as well as a guide on how to fine-tune the model on your own datasets, check the [official implementation](https://github.com/MAGICS-LAB/DNABERT_2).
+For pre-training and additional information, check the [official implementation](https://github.com/MAGICS-LAB/DNABERT_2).
 
 ---
 
 ## Contents
 
 - [1. Introduction](#1-introduction)
-- [2. Environment Setup](#2-environment-setup)
-- [3. Model Setup](#3-model-setup)
-- [4. Saving and loading fine-tuned model](#4-saving-and-loading-fine-tuned-model)
-- [5. Making Predictions](#5-making-predictions)
+- [2. Data Format](#2-data-format)
+- [3. Environment Setup](#3-environment-setup)
+- [4. Model Setup](#4-model-setup)
+- [5. Loading your fine-tuned model](#5-loading-your-fine-tuned-model)
+- [6. Making Predictions](#6-making-predictions)
 
 ## 1. Introduction
 
 DNABERT-2 is a foundation model trained on large-scale multi-species genome that achieves the state-of-the-art performance on $28$ tasks of the [GUE](https://drive.google.com/file/d/1GRtbzTe3UXYF1oW27ASNhYX3SZ16D7N2) benchmark. It replaces k-mer tokenization with BPE, positional embedding with Attention with Linear Bias (ALiBi), and incorporate other techniques to improve the efficiency and effectiveness of DNABERT.
 
-## 2. Environment Setup
+## 2. Data Format
+
+Generate 3 csv files from your HCV dataset: `train.csv`, `dev.csv`, and `test.csv`. In the training process, the model is trained on train.csv and is evaluated on the dev.csv file. After the training if finished, the checkpoint with the smallest loss on the dev.csv file is loaded and be evaluated on test.csv.
+
+Each file should be in the same format, with the first row as document head named `sequence, label`. Each following row should contain a DNA sequence and a numerical label concatenated by a `,` (ACGTCAGTCAGCGTACGT, 1). See [sample_data](https://github.com/MAGICS-LAB/DNABERT_2/tree/main/sample_data) for example datasets.
+
+## 3. Environment Setup
 
 ### Anaconda
 
@@ -47,7 +54,13 @@ cd ~
 git clone https://github.com/MAGICS-LAB/DNABERT_2.git
 ```
 
-## 3. Model Setup
+## 4. Model Setup
+
+Follow these steps before fine-tuning the model for HCV classification:
+
+- Replace the original `train.py` and `run_dnabert2.sh` files with the versions in this repository (`DNABERT-2HCV/finetune/train.py` and `DNABERT-2HCV/finetune/scripts/run_dnabert2.sh`).
+- Create a folder named `hcv_bert` in your home directory. Ensure the folder is empty before every run, as it will store the model and tokenizer.
+- Create a folder named `sequences` in your home directory, and another named `hcv` inside of it. Place your input sequences inside the `hcv` folder.
 
 In the Linux shell:
 
@@ -87,28 +100,7 @@ sh scripts/run_dnabert2.sh $DATA_PATH
 
 ```
 
-## 4. Saving and loading fine-tuned model
-
-
-```python
-'''
-before fine-tuning:
-
-- create the folder "hcv_bert" in the home directory
-- add the following code in train.py, before the lines:
-
-if __name__ == "__main__":
-    train()
-'''
-
-hcv_bert = os.path.expanduser("~/hcv_bert")
-
-model.save_pretrained(hcv_bert)
-print(f"Saved in {hcv_bert}")
-
-tokenizer.save_pretrained(hcv_bert)
-print(f"Saved in {hcv_bert}")
-```
+## 5. Loading your fine-tuned model
 
 ```python
 import os
@@ -121,7 +113,7 @@ tokenizer = AutoTokenizer.from_pretrained(hcv_bert, trust_remote_code=True)
 model = AutoModelForSequenceClassification.from_pretrained(hcv_bert, trust_remote_code=True)
 ```
 
-## 5. Making Predictions
+## 6. Making Predictions
 
 ### For single sequence classification:
 
