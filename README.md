@@ -2,9 +2,7 @@
 
 This repository is a fork of the original DNABERT-2 project. It contains modified scripts and results related to HCV genotype and subtype prediction.
 
-Below is the recommended setup for HCV fine-tuning using a Linux OS. Please check and edit your own file/folder paths before running the following codes.
-
-For pre-training and additional information, check the [official implementation](https://github.com/MAGICS-LAB/DNABERT_2).
+Below, we provide the setup and instructions for HCV fine-tuning on a Linux OS, so you can easily replicate our experiment. For pre-training and additional information, check the [official implementation](https://github.com/MAGICS-LAB/DNABERT_2).
 
 ---
 
@@ -20,6 +18,10 @@ For pre-training and additional information, check the [official implementation]
 ## 1. Introduction
 
 DNABERT-2 is a foundation model trained on large-scale multi-species genome that achieves the state-of-the-art performance on $28$ tasks of the [GUE](https://drive.google.com/file/d/1GRtbzTe3UXYF1oW27ASNhYX3SZ16D7N2) benchmark. It replaces k-mer tokenization with BPE, positional embedding with Attention with Linear Bias (ALiBi), and incorporate other techniques to improve the efficiency and effectiveness of DNABERT.
+
+In this project, we fine-tuned the original DNABERT-2 using data from the [Los Alamos Sequence Database](https://hcv.lanl.gov/content/index), which was formatted using the scripts provided in the `formatting` folder.
+
+In local evaluations, the model predicted the correct labels with over 98% accuracy and precision for the six main HCV genotypes and the most prevalent subtypes. Detailed test performance results are available in the `results` folder.
 
 ## 2. Data Format
 
