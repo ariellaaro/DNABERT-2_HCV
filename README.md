@@ -27,7 +27,7 @@ In local evaluations, the model predicted the correct labels with over 98% accur
 
 Generate 3 csv files from your HCV dataset: `train.csv`, `dev.csv`, and `test.csv`. In the training process, the model is trained on train.csv and is evaluated on the dev.csv file. After the training if finished, the checkpoint with the smallest loss on the dev.csv file is loaded and be evaluated on test.csv.
 
-Each file should be in the same format, with the first row as document head named `sequence, label`. Each following row should contain a DNA sequence and a numerical label concatenated by a `,` (ACGTCAGTCAGCGTACGT, 1). See [sample_data](https://github.com/MAGICS-LAB/DNABERT_2/tree/main/sample_data) for example datasets.
+Each file should be in the same format, with the first row being `sequence, label`. Each following row should contain a DNA sequence and a numerical label concatenated by a `,` (ACGTCAGTCAGCGTACGT, 1). See [sample_data](https://github.com/MAGICS-LAB/DNABERT_2/tree/main/sample_data) for example datasets.
 
 ## 3. Environment Setup
 
