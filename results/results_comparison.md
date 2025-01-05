@@ -36,7 +36,7 @@
   "eval_runtime": 15.8589, "eval_samples_per_second": 154.991, "eval_steps_per_second": 9.711, "epoch": 5.0}
 ```
 
-- 4train
+- 3train
 
 ```json
 {"eval_loss": 0.0016489449189975858,
@@ -52,7 +52,7 @@
 
 ### HCV Subtype Prediction
 
-- 5train
+- 4train
 
 ```json
 {"eval_loss": 0.01568801887333393,
@@ -64,7 +64,7 @@
   "eval_runtime": 36.8093, "eval_samples_per_second": 151.592, "eval_steps_per_second": 9.481, "epoch": 5.0}
 ```
 
-- 6train
+- 5train
 
 ```json
 {"eval_loss": 0.12441494315862656,
@@ -76,7 +76,7 @@
   "eval_runtime": 1.922, "eval_samples_per_second": 147.762, "eval_steps_per_second": 9.365, "epoch": 5.0}
 ```
 
-- 6train_n
+- 5train_n
   
 ```json
 {"eval_loss": 0.009804710745811462,
@@ -88,7 +88,7 @@
 "eval_runtime": 15.061, "eval_samples_per_second": 183.255, "eval_steps_per_second": 11.487, "epoch": 5.0}
 ```
 
-- 7train_n
+- 6train_n
   
 ```json
 {"eval_loss": 0.009103500284254551, 
@@ -100,7 +100,7 @@
 "eval_runtime": 16.0375, "eval_samples_per_second": 177.708, "eval_steps_per_second": 11.161, "epoch": 5.0}
 ```
 
-- 8train_n
+- 7train_n
   
 ```json
 {"eval_loss": 0.009103500284254551, 
